@@ -43,8 +43,4 @@ mamy szansę na wpisanie dowolnego słowa z danych liter. Jeżeli słowo te zbud
 jest z występujących na planszy liter oraz znajduje się w słowniku języka angielskiego
 wtedy przeciwny mag otrzymuje obrażenia. Jeżeli jednak słowa nie da się utworzyć z podanych
 liter bądź nie ma go w słowniku języka angielskiego to obrażenia otrzymuje gracz a literki
-użyte do zrobienia słowa zostają usunięte z planszy. Gracz jak i czarodziej mają po 3 życia
-
-
-Na projekt poświęciłem większość wolnego czasu którego i tak mam niewiele więc proszę o nie zważanie
-na system operacyjny pod który napisany został projekt.
+użyte do zrobienia słowa zostają usunięte z planszy. Gracz jak i czarodziej mają po 3 życia.

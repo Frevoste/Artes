@@ -186,7 +186,7 @@ func main() {
 			}
 
 		}
-		
+
 
 		// PRZESUWANIE(GENEROWANIE nowych położeń)
 		for o := range ant {

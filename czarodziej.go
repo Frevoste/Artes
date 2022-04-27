@@ -233,7 +233,9 @@ func main() {
 	}
 
 	fmt.Printf("\u001b\x1B[%d;%df%s\u001b", 1, 55, "KONIEC GRY")
-	time.Sleep(10*time.Second) // czas na nacieszenie sie wynikiem gry :)
+	fmt.Printf("\u001b\x1B[%d;%df%s\u001b", 2, 55, "")
+	fmt.Scanf("%d")
+	time.Sleep(5*time.Second) // czas na nacieszenie sie wynikiem gry :)
 
 
 }
