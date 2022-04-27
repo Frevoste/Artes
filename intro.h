@@ -6,9 +6,9 @@ void intro()
     {
         cout << endl;
     }
-    SetConsoleTextAttribute( // ta funkcja ustawia kolor tekstu i t³a
-            GetStdHandle(STD_OUTPUT_HANDLE), // pobieranie standardowego uchwytu wyjœcia konsoli
-                 4 // kod koloru (dotyczy koloru t³a jak i tekstu
+    SetConsoleTextAttribute( //funckja ustawiajaca kolor tekstu
+            GetStdHandle(STD_OUTPUT_HANDLE), // wyjście konsoli
+                 4 // kod koloru
                  );
     cout << "                      " << "      ___           ___                         ___           ___     " << endl;
     cout << "                      " << "     /\\  \\         /\\  \\                       /\\__\\         /\\__\\    " << endl;
@@ -21,19 +21,16 @@ void intro()
     cout << "                      " << "   \\:\\  \\        \\:\\~~\\      \\/__\\:\\  \\      \\:\\/:/  /     \\/_/:/  /  " << endl;
     cout << "                      " << "    \\:\\__\\        \\:\\__\\          \\:\\__\\      \\::/  /        /:/  /   " << endl;
     cout << "                      " << "     \\/__/         \\/__/           \\/__/       \\/__/         \\/__/    " << endl;
-    SetConsoleTextAttribute( // ta funkcja ustawia kolor tekstu i t³a
-            GetStdHandle(STD_OUTPUT_HANDLE), // pobieranie standardowego uchwytu wyjœcia konsoli
-                 11 // kod koloru (dotyczy koloru t³a jak i tekstu
+    SetConsoleTextAttribute( 
+            GetStdHandle(STD_OUTPUT_HANDLE),
+                 11 
                  );
     cout << endl;
     cout << endl;
     cout << "                                                                            @Mateusz_Redzimski" << endl;
-    SetConsoleTextAttribute( // ta funkcja ustawia kolor tekstu i t³a
-            GetStdHandle(STD_OUTPUT_HANDLE), // pobieranie standardowego uchwytu wyjœcia konsoli
-                 15 // kod koloru (dotyczy koloru t³a jak i tekstu
+    SetConsoleTextAttribute( 
+            GetStdHandle(STD_OUTPUT_HANDLE), 
+                 15 
                  );
-    for(int i=0;i<16;i++)
-    {
-        cout << endl;
-    }
+    
 }

@@ -1,0 +1,50 @@
+Projekt Artes którego nazwa wywodzi się z połączenia słów "Arłukowicz" i "Test"
+jest projektem łączącym 3 różne języki programowania w jedną całość:
+C++ został użyty do stworzenia menu oraz sterowania wielkością terminalu
+Go lang został użyty do stworzenia gry Czarodziej oraz symulacji Mrówek
+Perl został użyty jako skrypt do przeczesywania konkretnych plików tekstowych w poszukiwaniu słowa kluczowego
+
+Instrukcja dotycząca znajdujących się w nim plików:
+Artes.exe - Plik wykonywalny głównej części programu (Intro + Menu)
+czarodziej.exe - Plik wykonywalny częsci programu z grą Czarodziej
+mrówki.exe - Plik wykonwywalny części programu z symulacją Mrówek
+main.cpp - jest to główny plik wykorzystany do zkompilowania programu Artes.exe
+            służy głownie do wywołania plików nagłówkowych w których znajdują się
+            poszczególne potrzebne funkcje (pliki nagłówkowe mają końcówke .h)
+intro.h goto.h okno.h menu.h - są to wyżej wymienione pliki których działanie jest okomentowane w kodzie
+[a-z].txt - są to pliki w których znajdują się alfabetycznie ułożone słowa wyjęte ze słownika
+          języka angielskiego.
+wynik.txt słowo.txt - są to pliki służące do wymiany danych między skryptem perlowym (odczyt.pl) a programem
+                      czarodziej.exe
+mrowki.go / czarodziej.go - są to pliki zawierające okomentowany kod źródłowy wyżej wymienionych plików wykonywalnych
+odczyt.pl - jest to krótki skrypt perlowy którego działanie jest okomentowane
+utworzalfabet.go - to program którego użyłem do stworzenia plików [a-z].txt (nie było czasu na ręczne ich tworzenie)
+go.mod go.sum - są to pliki potrzebne do użycia zewnętrznej biblioteki "Robotgo"
+go.mod definiuje ścieżkę a go.sum suma kontrolna sprawdzająca zgodność zależności które definiowane są w go.mod (nie do końca jeszcze to rozumiem ale bez tych dwóch plików program nie zadziała poprawnie)
+
+
+Instrukcja uruchomienia progrmau :
+Program uruchamiamy poprzez uruchomienie programu Artes.exe
+Po wyświetleniu intra pojawia nam się menu w którym wybieramy konkretną opcję za pomocą
+strzałek w górę i w dół gdy zielony pasek wskazuje interesującą nas opcję klikamy przycisk enter
+a wtedy program włącza wybrany plik wykonywalny (czarodziej.exe/mrowki.exe)
+
+1.Mrowki:
+Założenia programu dokładnie już omówiliśmy na zajęciach. Rozwinąłem projekt o dodatkowe możliwości takie jak:
+    a. Mrówki mogą podnieść jedną sztukę losow wygenerowanego jedzenia
+    b. Na planszy pojawia się podstawowe mrowisko do którego mrówki mogą zanosić jedzenie
+    c. Jeżeli mrówka która nosi na plecach jedzenie znajdzie się w zasięgu mrowiska (zasięg to jeden znak) wtedy w miejscu tym pojawia się
+       mrowisko a mrówka traci jedzenie i idzie na poszukiwania kolejnego
+2.Czarodziej:
+Jest to gra polegająca na łączeniu losowo wygenerowanych liter na planszy w słowa.
+Co dwie sekundy plansza się odświeża przesuwając litery o jeden poziom niżej oraz
+generując od jednej do trzech nowych liter na planszę. W tym 2 sekundowym okienku
+mamy szansę na wpisanie dowolnego słowa z danych liter. Jeżeli słowo te zbudowane
+jest z występujących na planszy liter oraz znajduje się w słowniku języka angielskiego
+wtedy przeciwny mag otrzymuje obrażenia. Jeżeli jednak słowa nie da się utworzyć z podanych
+liter bądź nie ma go w słowniku języka angielskiego to obrażenia otrzymuje gracz a literki
+użyte do zrobienia słowa zostają usunięte z planszy. Gracz jak i czarodziej mają po 3 życia
+
+
+Na projekt poświęciłem większość wolnego czasu którego i tak mam niewiele więc proszę o nie zważanie
+na system operacyjny pod który napisany został projekt.

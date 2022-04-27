@@ -8,8 +8,10 @@
 #include <cstdlib>
 
 using namespace std;
-HANDLE console = GetStdHandle(STD_OUTPUT_HANDLE); // used for goto
-COORD CursorPosition; // used for goto
+
+// zmienne używane przez funkcje goto znajdująca się w pliku goto.h 
+HANDLE console = GetStdHandle(STD_OUTPUT_HANDLE); 
+COORD CursorPosition; 
 
 
 
@@ -17,15 +19,17 @@ void menu()
 {
     
     system ("CLS");
-        char t=-2;
+        char kwadrat=-2;
         int run, x=17;
         bool running = true;
         int zmienna=1;
         SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),10);
-        gotoXY(console,CursorPosition,52,17); for(int i=0;i<13;i++){cout<<("%c",t);}
+        gotoXY(console,CursorPosition,52,17); for(int i=0;i<13;i++){cout<<("%c",kwadrat);} //printowanie zielonych kwadratów pod pierwszą opcją która jest wybrana odgórnie
         SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),15);
     while(running)
 	{
+
+        //Przekazanie walorów estetycznych, ciekawostka nazwa Artes wywodzi się z połączenia słów "Arłukowicz" + "Test"
         SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),4);
         gotoXY(console,CursorPosition,33,5); cout <<   "  _|_|                _|                         "; 
         gotoXY(console,CursorPosition,33,6); cout << " _|    _|  _|  _|_|  _|_|_|_|    _|_|      _|_|_|  "; 
@@ -52,53 +56,53 @@ void menu()
         SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),15);
         system("pause>nul");
 
-        if(GetAsyncKeyState(VK_DOWN) && x != 32) //down button pressed
+        if(GetAsyncKeyState(VK_DOWN) && x != 32) //Gdy wciśniemy strzałkę w dół przeskakujemy o jedna pozycje w menu niżej
 			{
 				gotoXY(console,CursorPosition,52,x); cout << "             ";
 				x=x+5;
 				gotoXY(console,CursorPosition,52,x);
                 SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),10);
-                for(int i=0;i<13;i++){cout<<("%c",t);}
+                for(int i=0;i<13;i++){cout<<("%c",kwadrat);}
                 SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),15); 
 				zmienna++;
 				continue;
 				
 			}
-        if(GetAsyncKeyState(VK_UP) && x != 17) //up button pressed
+        if(GetAsyncKeyState(VK_UP) && x != 17) //Gdy wciśniemy strzałkę w górę przeskakujemy o jedną pozycję w menu wyżej
 			{
 				gotoXY(console,CursorPosition,52,x); cout << "             ";
 				x=x-5;
 				gotoXY(console,CursorPosition,52,x);
                 SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),10);
-                for(int i=0;i<13;i++){cout<<("%c",t);}
+                for(int i=0;i<13;i++){cout<<("%c",kwadrat);}
                 SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),15); 
 				zmienna--;
 				continue;
 			}
-        if(GetAsyncKeyState(VK_UP) && x == 17) //up button pressed
+        if(GetAsyncKeyState(VK_UP) && x == 17) //Gdy wciśniemy strzałkę w górę ale jesteśmy na granicy to przeskoczymy do ostatniej opcji
             {
                 gotoXY(console,CursorPosition,52,x); cout << "             ";
                 x=32;
                 gotoXY(console,CursorPosition,52,x);
                 SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),10);
-                for(int i=0;i<13;i++){cout<<("%c",t);}
+                for(int i=0;i<13;i++){cout<<("%c",kwadrat);}
                 SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),15);
                 zmienna=4; 
                 continue;
             }
-        if(GetAsyncKeyState(VK_DOWN) && x == 32) //up button pressed
+        if(GetAsyncKeyState(VK_DOWN) && x == 32) //Gdy wciśniemy strzałkę w dół ale jesteśmy na granicy to przeskoczymy do pierwszej opcji
             {
                 gotoXY(console,CursorPosition,52,x); cout << "             ";
                 x=17;
                 gotoXY(console,CursorPosition,52,x);
                 SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),10);
-                for(int i=0;i<13;i++){cout<<("%c",t);}
+                for(int i=0;i<13;i++){cout<<("%c",kwadrat);}
                 SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),15);
                 zmienna=1; 
                 continue;
             }
         if(GetAsyncKeyState(VK_RETURN))
-        { // Enter key pressed
+        { // Po wciśnięciu enter następuje przekazanie zmiennej do Switch który wybiera opcję którą wskazaliśmy
             
             switch( zmienna )
             {
@@ -117,7 +121,8 @@ void menu()
                     //...
                 case 3:
                     system("cls");
-                    
+                    cout << "To tajne przez poufne nie możesz tutaj zaglądać";
+                    menu();
                     break;
 
                 default:
